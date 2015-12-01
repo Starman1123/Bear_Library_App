@@ -6,9 +6,9 @@
 * Franklin Rice
 
 ## Purpose
-* Bear Library allows users to search and add books and add them to their custom 
+* Bear Library allows users to search and add books and add them to their custom <br />
   book lists.
-* They will be able to enter their own notes and see summaries and reviews from
+* They will be able to enter their own notes and see summaries and reviews from <br />
   other users.
 
 
@@ -21,9 +21,9 @@
 * Top book lists based on category
 
 ## Control Flow
-The typical user will sign up for an account and browse the top lists of books. 
-He will tap on a certain book and a detailed book view will be pushed to the top
-of the view stack, showing a bigger picture of the book cover, summary, and
+The typical user will sign up for an account and browse the top lists of books. <br />
+He will tap on a certain book and a detailed book view will be pushed to the top <br />
+of the view stack, showing a bigger picture of the book cover, summary, and <br />
 reviews from other users. The user can also add notes to books.
 
 ## Implementation
