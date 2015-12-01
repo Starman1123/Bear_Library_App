@@ -7,9 +7,9 @@
 
 ## Purpose
 * Bear Library allows users to search and add books and add them to their custom 
-* book lists.
+  book lists.
 * They will be able to enter their own notes and see summaries and reviews from
-* other users.
+  other users.
 
 
 ## Features
