@@ -60,7 +60,14 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
                                 newBook.author = bookList![i]["author"] as? String
                                 newBook.rank = String(bookList![i]["rank"]!!)
                                 newBook.publisher = "Publisher: " + (bookList![i]["publisher"] as? String)!
-                                newBook.imageURLStr = bookList![i]["book_image"] as? String
+                                newBook.ISBN = bookList![i]["primary_isbn10"] as? String
+                                newBook.amazonProductURLStr = bookList![i]["amazon_product_url"] as? String
+                                newBook.description = bookList![i]["description"] as? String
+                                if let urlStr = bookList![i]["book_image"] {
+                                    newBook.imageURLStr = urlStr as? String
+                                } else {
+                                    newBook.imageURLStr = "None"
+                                }
                                 self.fictionBookList.append(newBook)
                             }
                         }
@@ -80,7 +87,14 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
                                 newBook.author = bookList![i]["author"] as? String
                                 newBook.rank = String(bookList![i]["rank"]!!)
                                 newBook.publisher = "Publisher: " + (bookList![i]["publisher"] as? String)!
-                                newBook.imageURLStr = bookList![i]["book_image"] as? String
+                                newBook.ISBN = bookList![i]["primary_isbn10"] as? String
+                                newBook.amazonProductURLStr = bookList![i]["amazon_product_url"] as? String
+                                newBook.description = bookList![i]["description"] as? String
+                                if let urlStr = bookList![i]["book_image"] {
+                                    newBook.imageURLStr = urlStr as? String
+                                } else {
+                                    newBook.imageURLStr = "None"
+                                }
                                 self.nonfictionBookList.append(newBook)
                             }
                         }
@@ -122,22 +136,39 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.bookTitleLabel.text = book.title
         cell.bookAuthorLabel.text = book.author
         cell.bookPublisherLabel.text = book.publisher
-        if (self.imageCache.objectForKey(book.imageURLStr!) != nil) {
-            cell.bookImageView.image = self.imageCache.objectForKey(book.imageURLStr!) as? UIImage
+        if let _ = book.imageURLStr {
+            if (self.imageCache.objectForKey(book.imageURLStr!) != nil) {
+                cell.bookImageView.image = self.imageCache.objectForKey(book.imageURLStr!) as? UIImage
+            } else {
+                cell.bookImageView.image = nil
+                _ = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: book.imageURLStr ?? " ")!) {
+                    (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+                    if error == nil {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            cell.bookImageView.image = UIImage(data: data!)
+                            self.imageCache.setObject(UIImage(data: data!)!, forKey: book.imageURLStr!)
+                            cell.setNeedsLayout()
+                        })
+                    }
+                }.resume()
+            }
         } else {
-            cell.bookImageView.image = nil
-            _ = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: book.imageURLStr!)!) {
-                (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-                if error == nil {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        cell.bookImageView.image = UIImage(data: data!)
-                        self.imageCache.setObject(UIImage(data: data!)!, forKey: book.imageURLStr!)
-                        cell.setNeedsLayout()
-                    })
-                }
-            }.resume()
+            cell.bookImageView.image = UIImage(named: "default_image.jpg")
         }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let storyboard :UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: BookDetailViewController = storyboard.instantiateViewControllerWithIdentifier("BookDetailViewController") as! BookDetailViewController
+        var book: BLBook = BLBook()
+        if tableView.tag == 0 {
+            book = self.fictionBookList[indexPath.row]
+        } else {
+            book = self.nonfictionBookList[indexPath.row]
+        }
+        vc.book = book
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func segmentedControlTapped() {

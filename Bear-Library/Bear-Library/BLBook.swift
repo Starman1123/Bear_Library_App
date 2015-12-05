@@ -14,4 +14,7 @@ class BLBook {
     var imageURLStr: String?
     var rank: String?
     var publisher: String?
+    var ISBN: String?
+    var amazonProductURLStr: String?
+    var description: String?
 }
