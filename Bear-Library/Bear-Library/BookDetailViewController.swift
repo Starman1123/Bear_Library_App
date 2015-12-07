@@ -38,7 +38,7 @@ class BookDetailViewController: UIViewController {
         self.titleLabel.text = book.title
         self.authorLabel.text = book.author
         self.ISBNLabel.text = book.ISBN
-        self.descriptionLabel.text = "Book description: " + book.description!
+        self.descriptionLabel.text = "Book description: " + (book.description ?? "")
         
         if let _ = book.imageURLStr {
             dispatch_async(dispatch_get_global_queue(0, 0)) { () -> Void in
@@ -73,13 +73,15 @@ class BookDetailViewController: UIViewController {
     }
     
     @IBAction func buyBookOnAmazon(sender: UIButton) {
-        UIApplication.sharedApplication().openURL(NSURL(string: book.amazonProductURLStr!)!)
+        if book.amazonProductURLStr != "NoStr" {
+            UIApplication.sharedApplication().openURL(NSURL(string: book.amazonProductURLStr)!)
+        }
     }
     
     func bookAlreadyInList() -> Bool {
         var exists = false
         let libraryFetch = NSFetchRequest(entityName: "Book")
-        libraryFetch.predicate = NSPredicate(format: "isbn == %@", (book.ISBN)!)
+        libraryFetch.predicate = NSPredicate(format: "title == %@", (book.title)!)
         do {
             let fetchedList = try moc.executeFetchRequest(libraryFetch)
             let mocarray = fetchedList as! [NSManagedObject]
@@ -95,8 +97,6 @@ class BookDetailViewController: UIViewController {
     
     @IBAction func addToLibrary(sender: UIButton) {
         let entity = NSEntityDescription.entityForName("Book", inManagedObjectContext:moc)
-        let libraryFetch = NSFetchRequest(entityName: "Book")
-        libraryFetch.predicate = NSPredicate(format: "isbn == %@", (book.ISBN)!)
         
         if bookAlreadyInList() == false {
             let bookToAdd = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: moc)

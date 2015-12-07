@@ -61,7 +61,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
                                 newBook.rank = String(bookList![i]["rank"]!!)
                                 newBook.publisher = "Publisher: " + (bookList![i]["publisher"] as? String)!
                                 newBook.ISBN = bookList![i]["primary_isbn10"] as? String
-                                newBook.amazonProductURLStr = bookList![i]["amazon_product_url"] as? String
+                                newBook.amazonProductURLStr = (bookList![i]["amazon_product_url"] as? String) ?? "NoStr"
                                 newBook.description = bookList![i]["description"] as? String
                                 if let urlStr = bookList![i]["book_image"] {
                                     newBook.imageURLStr = urlStr as? String
@@ -88,7 +88,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
                                 newBook.rank = String(bookList![i]["rank"]!!)
                                 newBook.publisher = "Publisher: " + (bookList![i]["publisher"] as? String)!
                                 newBook.ISBN = bookList![i]["primary_isbn10"] as? String
-                                newBook.amazonProductURLStr = bookList![i]["amazon_product_url"] as? String
+                                newBook.amazonProductURLStr = (bookList![i]["amazon_product_url"] as? String) ?? "NoStr"
                                 newBook.description = bookList![i]["description"] as? String
                                 if let urlStr = bookList![i]["book_image"] {
                                     newBook.imageURLStr = urlStr as? String

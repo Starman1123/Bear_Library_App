@@ -15,6 +15,6 @@ class BLBook {
     var rank: String?
     var publisher: String?
     var ISBN: String?
-    var amazonProductURLStr: String?
+    var amazonProductURLStr: String = "NoStr"
     var description: String?
 }

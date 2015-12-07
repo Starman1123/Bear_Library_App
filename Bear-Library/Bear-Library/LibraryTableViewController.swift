@@ -21,6 +21,7 @@ class LibraryTableViewController: UITableViewController {
         super.viewDidLoad()
         // Do view setup here.
         self.tableView.registerClass(BLBookTableViewCell.self, forCellReuseIdentifier: "BLBookTableViewCell")
+        self.tableView.tableFooterView = UIView()
         setUpTableViews()
         loadFavoriteBooks()
     }
@@ -51,7 +52,7 @@ class LibraryTableViewController: UITableViewController {
                 book.imageURLStr = obj.valueForKey("imageURLStr") as? String
                 book.ISBN = obj.valueForKey("isbn") as? String
                 book.description = obj.valueForKey("desc") as? String
-                book.amazonProductURLStr = obj.valueForKey("amazonProductURLStr") as? String
+                book.amazonProductURLStr = (obj.valueForKey("amazonProductURLStr") as? String) ?? "NoStr"
                 book.rank = ""
                 book.publisher = obj.valueForKey("publisher") as? String
                 bookList.append(book)

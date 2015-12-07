@@ -21,10 +21,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
 
         self.tableView.registerNib(UINib(nibName: "BLBookTableViewCell", bundle: nil), forCellReuseIdentifier: "BLBookTableViewCell")
         self.searchBar.delegate = self
-
-        let tapRecognizer = UITapGestureRecognizer()
-        tapRecognizer.addTarget(self, action: "didTapView")
-        self.view.addGestureRecognizer(tapRecognizer)
+        self.tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,7 +60,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
                             newBook.author = results![i]["author"] as? String
                             newBook.publisher = "Publisher: " + (results![i]["publisher"] as? String ?? "")
                             newBook.ISBN = results![i]["primary_isbn10"] as? String
-                            newBook.amazonProductURLStr = results![i]["amazon_product_url"] as? String
+                            newBook.amazonProductURLStr = (results![i]["amazon_product_url"] as? String) ?? "NoStr"
                             newBook.description = results![i]["description"] as? String
                             if let urlStr = results![i]["book_image"] {
                                 newBook.imageURLStr = urlStr as? String
@@ -111,11 +108,16 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100
     }
-    
-    func didTapView(){
-        self.view.endEditing(true)
-    }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let storyboard :UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: BookDetailViewController = storyboard.instantiateViewControllerWithIdentifier("BookDetailViewController") as! BookDetailViewController
+        var book: BLBook = BLBook()
+        book = self.bookList[indexPath.row]
+        vc.book = book
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
