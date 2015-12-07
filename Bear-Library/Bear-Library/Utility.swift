@@ -18,6 +18,7 @@ class Utility {
     let tabBarTitleTextFont: UIFont = UIFont(name: "Didot", size: 13.0)!
     let getTopFictionURL: NSURL = NSURL(string: "https://api.nytimes.com/svc/books/v3/lists/hardcover-fiction.json?api-key=7797e2d29bd1604f89df9a1bea3085b4:17:73611604")!
     let getTopNonfictionURL: NSURL = NSURL(string: "https://api.nytimes.com/svc/books/v3/lists/hardcover-nonfiction.json?api-key=7797e2d29bd1604f89df9a1bea3085b4:17:73611604")!
+    let searchBookURLStr: String = "http://api.nytimes.com/svc/books/v3/lists/best-sellers/history?api-key=7797e2d29bd1604f89df9a1bea3085b4:17:73611604&title="
     init() {
         
     }

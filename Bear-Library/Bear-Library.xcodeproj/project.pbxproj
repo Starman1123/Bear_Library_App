@@ -22,6 +22,8 @@
 		46AE37431C0AE084009C8F58 /* BLBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AE37411C0AE084009C8F58 /* BLBookTableViewCell.xib */; };
 		46AE37481C12A041009C8F58 /* default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 46AE37471C12A041009C8F58 /* default_image.jpg */; };
 		46AE37501C12DCC8009C8F58 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE374F1C12DCC8009C8F58 /* BookDetailViewController.swift */; };
+		46AE37521C14FDC8009C8F58 /* Search-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 46AE37511C14FDC8009C8F58 /* Search-26.png */; };
+		46AE37541C14FE10009C8F58 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37531C14FE10009C8F58 /* SearchTableViewController.swift */; };
 		A648456F4FA46A8D24DDB952 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586B0AC034351AF503EAFDEA /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		46AE37411C0AE084009C8F58 /* BLBookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLBookTableViewCell.xib; sourceTree = "<group>"; };
 		46AE37471C12A041009C8F58 /* default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_image.jpg; sourceTree = "<group>"; };
 		46AE374F1C12DCC8009C8F58 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		46AE37511C14FDC8009C8F58 /* Search-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-26.png"; sourceTree = "<group>"; };
+		46AE37531C14FE10009C8F58 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		53196FA3141EFC0DB24228D8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		586B0AC034351AF503EAFDEA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AAD9271B489332B40038E4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 				46AE371C1C0921CB009C8F58 /* Main.storyboard */,
 				46AE374F1C12DCC8009C8F58 /* BookDetailViewController.swift */,
 				46AE373C1C0AD42E009C8F58 /* PopularViewController.swift */,
+				46AE37531C14FE10009C8F58 /* SearchTableViewController.swift */,
 				46AE37381C0AC484009C8F58 /* Utility.swift */,
 				46AE37341C0AB729009C8F58 /* BLBook.swift */,
 				46AE37401C0AE084009C8F58 /* BLBookTableViewCell.swift */,
@@ -105,6 +110,7 @@
 				46AE372E1C09265A009C8F58 /* Fire Element-25.png */,
 				46AE372F1C09265A009C8F58 /* Gender-Neutral-User-25.png */,
 				46AE37471C12A041009C8F58 /* default_image.jpg */,
+				46AE37511C14FDC8009C8F58 /* Search-26.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 				46AE37431C0AE084009C8F58 /* BLBookTableViewCell.xib in Resources */,
 				46AE37231C0921CB009C8F58 /* Assets.xcassets in Resources */,
 				46AE37301C09265A009C8F58 /* Library-25.png in Resources */,
+				46AE37521C14FDC8009C8F58 /* Search-26.png in Resources */,
 				46AE37321C09265A009C8F58 /* Gender-Neutral-User-25.png in Resources */,
 				46AE371E1C0921CB009C8F58 /* Main.storyboard in Resources */,
 				46AE37481C12A041009C8F58 /* default_image.jpg in Resources */,
@@ -261,6 +268,7 @@
 				46AE37501C12DCC8009C8F58 /* BookDetailViewController.swift in Sources */,
 				46AE37391C0AC484009C8F58 /* Utility.swift in Sources */,
 				46AE37191C0921CB009C8F58 /* AppDelegate.swift in Sources */,
+				46AE37541C14FE10009C8F58 /* SearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

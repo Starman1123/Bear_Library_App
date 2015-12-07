@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -55,14 +56,19 @@
             </objects>
             <point key="canvasLocation" x="1708.5" y="388"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search Table View Controller-->
         <scene sceneID="F5p-TF-MMV">
             <objects>
-                <tableViewController id="yF7-N4-vXn" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="W3a-Mq-FUl">
+                <tableViewController id="yF7-N4-vXn" customClass="SearchTableViewController" customModule="Bear_Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="W3a-Mq-FUl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" id="ZWZ-hd-MV6">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZkS-3a-kwF">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
@@ -79,6 +85,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="D0q-T2-dCd"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ZWZ-hd-MV6" id="lo0-pE-5VY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysY-oM-aES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,6 +154,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IZZ-QZ-rQc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Rh-wS-L38">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cbo-f0-NHf">
@@ -257,25 +267,25 @@
                                 <exclude reference="7Oy-AG-Hm7"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9l6-c7-2g3"/>
-                                <exclude reference="YZb-x9-23n"/>
-                                <exclude reference="HY1-bK-Yz8"/>
-                                <exclude reference="VF3-gZ-0uM"/>
-                                <exclude reference="0HG-Kv-EXD"/>
-                                <exclude reference="Tua-L8-csi"/>
-                                <exclude reference="V3c-s2-zVb"/>
-                                <exclude reference="dl4-Cl-qW9"/>
-                                <exclude reference="Bul-R9-o9i"/>
-                                <exclude reference="vYX-Ut-o63"/>
                                 <exclude reference="A7u-n5-ZBg"/>
                                 <exclude reference="gAo-r1-mJY"/>
                                 <exclude reference="yhk-aP-ORu"/>
-                                <exclude reference="3yv-in-KLO"/>
-                                <exclude reference="jDb-JW-JEy"/>
-                                <exclude reference="wJa-px-lpV"/>
                                 <exclude reference="7g7-1O-teA"/>
                                 <exclude reference="YL9-8D-cGp"/>
                                 <exclude reference="eCp-MR-oxw"/>
+                                <exclude reference="0HG-Kv-EXD"/>
+                                <exclude reference="Tua-L8-csi"/>
+                                <exclude reference="3yv-in-KLO"/>
+                                <exclude reference="jDb-JW-JEy"/>
+                                <exclude reference="wJa-px-lpV"/>
+                                <exclude reference="HY1-bK-Yz8"/>
+                                <exclude reference="VF3-gZ-0uM"/>
+                                <exclude reference="Bul-R9-o9i"/>
+                                <exclude reference="vYX-Ut-o63"/>
+                                <exclude reference="V3c-s2-zVb"/>
+                                <exclude reference="dl4-Cl-qW9"/>
+                                <exclude reference="9l6-c7-2g3"/>
+                                <exclude reference="YZb-x9-23n"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -290,25 +300,25 @@
                                 <include reference="7Oy-AG-Hm7"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9l6-c7-2g3"/>
-                                <include reference="YZb-x9-23n"/>
-                                <include reference="HY1-bK-Yz8"/>
-                                <include reference="VF3-gZ-0uM"/>
-                                <include reference="0HG-Kv-EXD"/>
-                                <include reference="Tua-L8-csi"/>
-                                <include reference="V3c-s2-zVb"/>
-                                <include reference="dl4-Cl-qW9"/>
-                                <include reference="Bul-R9-o9i"/>
-                                <include reference="vYX-Ut-o63"/>
                                 <include reference="A7u-n5-ZBg"/>
                                 <include reference="gAo-r1-mJY"/>
                                 <include reference="yhk-aP-ORu"/>
-                                <include reference="3yv-in-KLO"/>
-                                <include reference="jDb-JW-JEy"/>
-                                <include reference="wJa-px-lpV"/>
                                 <include reference="7g7-1O-teA"/>
                                 <include reference="YL9-8D-cGp"/>
                                 <include reference="eCp-MR-oxw"/>
+                                <include reference="0HG-Kv-EXD"/>
+                                <include reference="Tua-L8-csi"/>
+                                <include reference="3yv-in-KLO"/>
+                                <include reference="jDb-JW-JEy"/>
+                                <include reference="wJa-px-lpV"/>
+                                <include reference="HY1-bK-Yz8"/>
+                                <include reference="VF3-gZ-0uM"/>
+                                <include reference="Bul-R9-o9i"/>
+                                <include reference="vYX-Ut-o63"/>
+                                <include reference="V3c-s2-zVb"/>
+                                <include reference="dl4-Cl-qW9"/>
+                                <include reference="9l6-c7-2g3"/>
+                                <include reference="YZb-x9-23n"/>
                             </mask>
                         </variation>
                     </view>
@@ -346,11 +356,11 @@
             </objects>
             <point key="canvasLocation" x="790.5" y="388"/>
         </scene>
-        <!--Profile-->
+        <!--Search-->
         <scene sceneID="aXd-FJ-sM1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="deE-qg-KSN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Gender-Neutral-User-25.png" id="FiF-vW-Blz"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search-26.png" id="FiF-vW-Blz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QYo-ri-2j7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -368,7 +378,7 @@
     </scenes>
     <resources>
         <image name="Fire Element-25.png" width="25" height="25"/>
-        <image name="Gender-Neutral-User-25.png" width="25" height="25"/>
         <image name="Library-25.png" width="25" height="25"/>
+        <image name="Search-26.png" width="26" height="26"/>
     </resources>
 </document>
