@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		46AE37191C0921CB009C8F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37181C0921CB009C8F58 /* AppDelegate.swift */; };
 		46AE371E1C0921CB009C8F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46AE371C1C0921CB009C8F58 /* Main.storyboard */; };
-		46AE37211C0921CB009C8F58 /* Bear_Library.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46AE371F1C0921CB009C8F58 /* Bear_Library.xcdatamodeld */; };
 		46AE37231C0921CB009C8F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AE37221C0921CB009C8F58 /* Assets.xcassets */; };
 		46AE37261C0921CB009C8F58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46AE37241C0921CB009C8F58 /* LaunchScreen.storyboard */; };
 		46AE37301C09265A009C8F58 /* Library-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46AE372D1C09265A009C8F58 /* Library-25.png */; };
@@ -24,6 +23,8 @@
 		46AE37501C12DCC8009C8F58 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE374F1C12DCC8009C8F58 /* BookDetailViewController.swift */; };
 		46AE37521C14FDC8009C8F58 /* Search-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 46AE37511C14FDC8009C8F58 /* Search-26.png */; };
 		46AE37541C14FE10009C8F58 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37531C14FE10009C8F58 /* SearchTableViewController.swift */; };
+		46AE37571C1510B8009C8F58 /* Bear_Library.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46AE37551C1510B8009C8F58 /* Bear_Library.xcdatamodeld */; };
+		46D974F71C1510F4005C7BC9 /* LibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D974F61C1510F4005C7BC9 /* LibraryTableViewController.swift */; };
 		A648456F4FA46A8D24DDB952 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586B0AC034351AF503EAFDEA /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +32,6 @@
 		46AE37151C0921CB009C8F58 /* Bear-Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bear-Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AE37181C0921CB009C8F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46AE371D1C0921CB009C8F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		46AE37201C0921CB009C8F58 /* Bear_Library.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bear_Library.xcdatamodel; sourceTree = "<group>"; };
 		46AE37221C0921CB009C8F58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46AE37251C0921CB009C8F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46AE37271C0921CB009C8F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		46AE374F1C12DCC8009C8F58 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		46AE37511C14FDC8009C8F58 /* Search-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-26.png"; sourceTree = "<group>"; };
 		46AE37531C14FE10009C8F58 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		46AE37561C1510B8009C8F58 /* Bear_Library.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bear_Library.xcdatamodel; sourceTree = "<group>"; };
+		46D974F61C1510F4005C7BC9 /* LibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
 		53196FA3141EFC0DB24228D8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		586B0AC034351AF503EAFDEA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AAD9271B489332B40038E4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,11 +96,12 @@
 				46AE37381C0AC484009C8F58 /* Utility.swift */,
 				46AE37341C0AB729009C8F58 /* BLBook.swift */,
 				46AE37401C0AE084009C8F58 /* BLBookTableViewCell.swift */,
+				46D974F61C1510F4005C7BC9 /* LibraryTableViewController.swift */,
 				46AE37411C0AE084009C8F58 /* BLBookTableViewCell.xib */,
 				46AE37221C0921CB009C8F58 /* Assets.xcassets */,
 				46AE37241C0921CB009C8F58 /* LaunchScreen.storyboard */,
 				46AE37271C0921CB009C8F58 /* Info.plist */,
-				46AE371F1C0921CB009C8F58 /* Bear_Library.xcdatamodeld */,
+				46AE37551C1510B8009C8F58 /* Bear_Library.xcdatamodeld */,
 			);
 			path = "Bear-Library";
 			sourceTree = "<group>";
@@ -264,11 +267,12 @@
 				46AE37351C0AB729009C8F58 /* BLBook.swift in Sources */,
 				46AE373D1C0AD42E009C8F58 /* PopularViewController.swift in Sources */,
 				46AE37421C0AE084009C8F58 /* BLBookTableViewCell.swift in Sources */,
-				46AE37211C0921CB009C8F58 /* Bear_Library.xcdatamodeld in Sources */,
 				46AE37501C12DCC8009C8F58 /* BookDetailViewController.swift in Sources */,
 				46AE37391C0AC484009C8F58 /* Utility.swift in Sources */,
 				46AE37191C0921CB009C8F58 /* AppDelegate.swift in Sources */,
+				46D974F71C1510F4005C7BC9 /* LibraryTableViewController.swift in Sources */,
 				46AE37541C14FE10009C8F58 /* SearchTableViewController.swift in Sources */,
+				46AE37571C1510B8009C8F58 /* Bear_Library.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,12 +433,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		46AE371F1C0921CB009C8F58 /* Bear_Library.xcdatamodeld */ = {
+		46AE37551C1510B8009C8F58 /* Bear_Library.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				46AE37201C0921CB009C8F58 /* Bear_Library.xcdatamodel */,
+				46AE37561C1510B8009C8F58 /* Bear_Library.xcdatamodel */,
 			);
-			currentVersion = 46AE37201C0921CB009C8F58 /* Bear_Library.xcdatamodel */;
+			currentVersion = 46AE37561C1510B8009C8F58 /* Bear_Library.xcdatamodel */;
 			path = Bear_Library.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

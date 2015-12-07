@@ -40,7 +40,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        print("textDidChange")
         // || searchBar.text?.containsString(" ") != false
         if (searchBar.text?.characters.count<3) {
             bookList.removeAll()
@@ -73,7 +72,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
                             }
                             self.bookList.append(newBook)
                         }
-                        print(self.bookList)
                     }
                 }
                 self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Fade)
