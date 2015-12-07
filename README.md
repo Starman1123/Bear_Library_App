@@ -14,6 +14,7 @@
 
 
 ## Features
+* Use of Core Data, to make persistent
 * Top book lists based on category (fiction/non-fiction)
 * Ability to click on a book, and see a more detailed view
 * Ability to search for specific book(s) and add into library
