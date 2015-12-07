@@ -8,37 +8,37 @@
 ## Purpose
 * Bear Library allows users to search and add books and add them to their custom <br />
   book lists.
-* They will be able to enter their own notes and see summaries and reviews from <br />
-  other users.
+* Users can also click on the appropriate links and buy their favorite books from <br />
+  from Amazon.
+* Once a user has finished reading a book in their library, they can delete it.
 
 
 ## Features
-* Login/Logout
-* User Profile
-* New York Times Developer API Integration for book reviews
-* OpenLibrary API Integration for book photos
-* Rating system that lets users rate books in his lists
-* Top book lists based on category
+* Top book lists based on category (fiction/non-fiction)
+* Ability to click on a book, and see a more detailed view
+* Ability to search for specific book(s) and add into library
+* Ability to delete books from library via left swipe
+* Doesn't let user add book already in library
 
 ## Control Flow
-The typical user will sign up for an account and browse the top lists of books. <br />
+The typical user can browse the top lists of books. <br />
 He will tap on a certain book and a detailed book view will be pushed to the top <br />
 of the view stack, showing a bigger picture of the book cover, summary, and <br />
-reviews from other users. The user can also add notes to books.
+a link to the book on Amazon. The user can also delete books from their library.<br />
 
 ## Implementation
 
 ### Model
-* Book.swift
-* BookList.swift
-* User.swift
+* BLBook.swift
+* Utility.swift
 
 ### View
-* TopBookListsTableView
-* UserProfileTableView
-* BookDetailTableView
+* PopularView
+* BookDetailView
+* LibraryView
+* SearchView
 
 ### Controller
-* TopBookListsTableViewController
-* UserProfileTableViewController
-* BookDetailTableViewController
+* PopularViewController
+* BookDetailViewController
+* LibraryViewController
