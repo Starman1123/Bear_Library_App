@@ -37,7 +37,8 @@ class BookDetailViewController: UIViewController {
         
         self.titleLabel.text = book.title
         self.authorLabel.text = book.author
-        self.ISBNLabel.text = book.ISBN
+        self.publisherLabel.text = (book.publisher ?? "")
+        self.ISBNLabel.text = "ISBN: " + (book.ISBN ?? "")
         self.descriptionLabel.text = "Book description: " + (book.description ?? "")
         
         if let _ = book.imageURLStr {
