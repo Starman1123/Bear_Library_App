@@ -1,7 +1,6 @@
 # Bear Library
 
-## This project uses Cocoapods. Please click on Bear-Library.xcworkspace <br />
-to open the project.
+## This project uses Cocoapod. Please click on Bear-Library.xcworkspace to open the project.
 
 ## Authors
 * Sheng Wang
