@@ -145,7 +145,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
                     (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
                     if error == nil {
                         dispatch_async(dispatch_get_main_queue(), {
-                            cell.bookImageView.image = UIImage(data: data!)
+                            cell.bookImageView.image = UIImage(data: data!) ?? UIImage(named: "default_image")
                             self.imageCache.setObject(UIImage(data: data!)!, forKey: book.imageURLStr!)
                             cell.setNeedsLayout()
                         })
